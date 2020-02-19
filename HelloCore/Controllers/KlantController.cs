@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using HelloCore.Data;
 using HelloCore.Models;
+using HelloCore.ViewModels;
 
 namespace HelloCore.Controllers
 {
@@ -22,7 +23,9 @@ namespace HelloCore.Controllers
         // GET: Klant
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Klanten.ToListAsync());
+            var viewModel = new ListKlantViewModel();
+            viewModel.Klanten = await _context.Klanten.ToListAsync();
+            return View(viewModel);
         }
 
         // GET: Klant/Details/5

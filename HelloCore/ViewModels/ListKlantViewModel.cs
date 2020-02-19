@@ -10,6 +10,6 @@ namespace HelloCore.ViewModels
     {
         public String Naam { get; set; }
         public String Voornaam { get; set; }
-        public List<Klant> Bestellingen { get; set; }
+        public List<Klant> Klanten { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<HelloCore.Models.Klant>
+﻿@model HelloCore.ViewModels.ListKlantViewModel
 
 @{
     ViewData["Title"] = "Index";
@@ -13,19 +13,19 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Naam)
+                @Html.DisplayNameFor(model => model.Klanten[0].Naam)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Voornaam)
+                @Html.DisplayNameFor(model => model.Klanten[0].Voornaam)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.AangemaaktDatum)
+                @Html.DisplayNameFor(model => model.Klanten[0].AangemaaktDatum)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+@foreach (var item in Model.Klanten) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Naam)
